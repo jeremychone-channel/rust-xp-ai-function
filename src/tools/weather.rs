@@ -3,7 +3,6 @@ use crate::model::ModelManager;
 use async_openai::types::ChatCompletionTool;
 use rpc_router::{router_builder, RouterBuilder, RpcParams};
 use serde::{Deserialize, Serialize};
-use serde_json::json;
 
 pub(super) fn router_builder() -> RouterBuilder {
 	router_builder![get_weather]
@@ -42,7 +41,7 @@ struct Weather {
 }
 
 async fn get_weather(
-	mm: ModelManager,
+	_mm: ModelManager,
 	params: GetWeatherParams,
 ) -> Result<Weather, String> {
 	Ok(Weather {

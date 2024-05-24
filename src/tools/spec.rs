@@ -95,7 +95,8 @@ mod tests {
 
 	#[test]
 	fn test_tool_spec() -> Result<()> {
-		tool_spec::<GetWeatherParams>();
+		// jut to test signature (for now)
+		let _ = tool_spec::<GetWeatherParams>();
 		Ok(())
 	}
 }

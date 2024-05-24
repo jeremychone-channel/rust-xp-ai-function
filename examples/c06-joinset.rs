@@ -1,11 +1,9 @@
-use rpc_router::{resources_builder, router_builder, RpcParams};
-use serde::{Deserialize, Serialize};
-use serde_json::json;
+use rpc_router::resources_builder;
 use tokio::task::JoinSet;
+use xp_ai_function::conv;
 use xp_ai_function::model::ModelManager;
 use xp_ai_function::oa_client::new_oa_client;
-use xp_ai_function::tools::{new_ai_tools, AiTools};
-use xp_ai_function::{chat, conv};
+use xp_ai_function::tools::new_ai_tools;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
